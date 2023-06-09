@@ -36,29 +36,39 @@ function Card(props) {
 
   return (
     <div className={styles.wrapperCard}>
-      {isFav ? (
-        <button onClick={handleFavorite}>❤️</button>
-      ) : (
-        <button onClick={handleFavorite}>🤍</button>
-      )}
-      <button
-        className={styles.btn}
-        onClick={() => {
-          onClose(id);
-        }}
-      >
-        Delete
-      </button>
-      <img src={image} alt="character" />
+      <div className={styles.head}>
+        {isFav ? (
+          <button className={styles.heart} onClick={handleFavorite}>
+            ❤️
+          </button>
+        ) : (
+          <button className={styles.heart} onClick={handleFavorite}>
+            🤍
+          </button>
+        )}
+        <button
+          className={styles.btn}
+          onClick={() => {
+            onClose(id);
+          }}
+        >
+          X
+        </button>
+      </div>
+      <div className={styles.divCaja}>
+        <div className={styles.caja}>
+          <img className={styles.image} src={image} alt="character" />
+        </div>
+      </div>
       <div className={styles.wrapperText}>
         <Link strict to={`/detail/${id}`}>
           <h1 className={styles.name}>{name}</h1>
         </Link>
-        <div className={styles.details}>
-          <h2>{status}</h2>
-          <h2>{species}</h2>
-          <h2>{gender}</h2>
-          <h2>{origin}</h2>
+        <div>
+          <h2 className={styles.fields}>{status}</h2>
+          <h2 className={styles.fields}>{species}</h2>
+          <h2 className={styles.fields}>{gender}</h2>
+          <h2 className={styles.fields}>{origin}</h2>
         </div>
       </div>
     </div>

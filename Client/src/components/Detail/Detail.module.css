@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  /* background-color: rgb(24, 23, 23); */
+  justify-content: space-around;
+  /* padding-top: 220px; */
+}
+
+.title {
+  color: white;
+  font-size: 44px;
+}
+
+.leyenda {
+  font-size: 32px;
+  /* color: lightgreen; */
+}
+
+.photo {
+  margin: 90px 100px 10px 10px;
+  border-radius: 50%;
+}
