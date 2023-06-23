@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { styles } from "./Detail.module.css";
+import styles from "./Detail.module.css";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 
@@ -21,14 +21,16 @@ const Detail = () => {
   }, [id]);
 
   return (
-    <div>
-      <h1>{character.name}</h1>
-      <h1>{character.status}</h1>
-      <h1>{character.species}</h1>
-      <h1>{character.gender}</h1>
-      {/* {character.origin && <h1>{character.origin.name}</h1>} */}
-      <h1>{character.origin?.name}</h1>
-      <img src={character.image} alt="" />
+    <div className={styles.container}>
+      <div>
+        <h1 className={styles.title}>{character.name}</h1>
+        <h1 className={styles.leyenda}>{character.status}</h1>
+        <h1 className={styles.leyenda}>{character.species}</h1>
+        <h1 className={styles.leyenda}>{character.gender}</h1>
+        {/* {character.origin && <h1>{character.origin.name}</h1>} */}
+        <h1 className={styles.leyenda}>{character.origin?.name}</h1>
+      </div>
+      <img className={styles.photo} src={character.image} alt="" />
     </div>
   );
 };

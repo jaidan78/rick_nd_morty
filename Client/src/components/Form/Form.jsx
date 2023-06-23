@@ -2,6 +2,8 @@ import { useState } from "react";
 import styles from "./Form.module.css";
 import validation from "./validation";
 
+const { log, box, input, button } = styles;
+
 const Form = (props) => {
   const { login } = props;
   const [userData, setUserData] = useState({ email: "", password: "" });
@@ -18,11 +20,12 @@ const Form = (props) => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
+    <div className={log}>
+      <form className={box} onSubmit={handleSubmit}>
         {/* USERNAME */}
         <label htmlFor="">Email</label>
         <input
+          className={input}
           type="text"
           placeholder="Email..."
           name="email"
@@ -40,6 +43,7 @@ const Form = (props) => {
         {/* PASSWORD */}
         <label htmlFor="">Password</label>
         <input
+          className={input}
           type="password"
           placeholder="Password..."
           name="password"
@@ -47,7 +51,7 @@ const Form = (props) => {
           value={userData.password}
         />
         {errors.p1 ? <p>{errors.p1}</p> : <p>{errors.p2}</p>}
-        <button>LOGIN</button>
+        <button className={button}>Login</button>
       </form>
     </div>
   );
